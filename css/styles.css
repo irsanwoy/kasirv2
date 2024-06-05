@@ -1,119 +1,155 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
-header {
-    background-color: #343a40;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-header nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 20px;
-    color: #343a40;
-}
-
-form {
-    max-width: 600px;
+.container {
+    max-width: 800px;
     margin: 20px auto;
-    background: white;
     padding: 20px;
-    border-radius: 5px;
+    background: #fff;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form input[type="text"],
-form input[type="password"],
-form input[type="number"],
-form input[type="hidden"],
-form textarea,
-form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* Header and Footer */
+header {
+    background: #007bff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 24px;
 }
 
-form button {
+footer {
+    background: #007bff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
     width: 100%;
-    padding: 10px;
-    background-color: #343a40;
+    bottom: 0;
+}
+
+/* Buttons */
+.button, .print-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.button:hover, .print-button:hover {
+    background-color: #0056b3;
+}
+
+/* Forms */
+form input[type="text"], form input[type="number"], form textarea, form select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
     font-size: 16px;
 }
 
-form button:hover {
-    background-color: #495057;
+form button[type="submit"]:hover {
+    background: #218838;
 }
 
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 table, th, td {
     border: 1px solid #ddd;
 }
 
-table th, table td {
+th, td {
     padding: 10px;
     text-align: left;
 }
 
-table th {
-    background-color: #343a40;
-    color: white;
-}
-
-table tr:nth-child(even) {
+th {
     background-color: #f2f2f2;
 }
 
-table tr:hover {
-    background-color: #e9ecef;
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-p {
-    text-align: center;
-    color: red;
+tr:hover {
+    background-color: #f1f1f1;
 }
 
-footer {
-    background-color: #343a40;
-    color: white;
+/* Pagination */
+.pagination a {
+    color: #007bff;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+/* Specific styles for receipt */
+.receipt {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
+}
+
+.receipt h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.receipt table {
     width: 100%;
-    bottom: 0;
+    margin-bottom: 20px;
+}
+
+.receipt table, .receipt th, .receipt td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+.receipt th, .receipt td {
+    padding: 8px;
+    text-align: left;
+}
+
+.receipt th {
+    background: #f2f2f2;
 }

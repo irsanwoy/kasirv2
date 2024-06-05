@@ -13,6 +13,10 @@ require_once 'classes/Sale.php';
 $sale = new Sale();
 $sale->id = $_GET['id'];
 $sale_data = $sale->readOneWithDetails();
+
+if (!$sale_data) {
+    die("Data penjualan tidak ditemukan.");
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +51,21 @@ $sale_data = $sale->readOneWithDetails();
         .receipt th {
             background: #f2f2f2;
         }
+        .print-button {
+            display: block;
+            width: 100%;
+            margin: 20px 0;
+            padding: 10px 0;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .print-button:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -73,6 +92,7 @@ $sale_data = $sale->readOneWithDetails();
             <?php } ?>
         </table>
         <p>Total: <?php echo $sale_data['total']; ?></p>
+        <a href="#" class="print-button" onclick="window.print();">Cetak Struk</a>
     </div>
 </body>
 </html>

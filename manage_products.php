@@ -40,7 +40,8 @@ $total_pages = ceil($total_rows / $limit);
     <?php include 'templates/header.php'; ?>
     <div class="container">
         <h2>Kelola Barang</h2>
-        <a href="add_product.php" class="button">Tambah Barang</a>
+        <a href="add_product.php" class="button" style="display: inline-block; padding: 10px 20px; font-size: 16px; font-weight: bold; text-align: center; text-decoration: none; background-color: green; color: white; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 10px; ">Tambah Barang</a>
+
         <?php if (isset($message)) { echo "<p>$message</p>"; } ?>
         <form method="GET">
             <input type="text" name="search" placeholder="Cari Barang" value="<?php echo htmlspecialchars($search_term); ?>">

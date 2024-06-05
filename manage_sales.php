@@ -8,6 +8,16 @@ if (!isset($_SESSION['user_id'])) {
 require_once 'classes/Sale.php';
 $sale = new Sale();
 
+if (isset($_GET['delete'])) {
+    $sale->id = $_GET['delete'];
+    if ($sale->delete()) {
+        header("Location: manage_sales.php");
+        exit();
+    } else {
+        $message = "Gagal menghapus penjualan.";
+    }
+}
+
 $sales = $sale->readAllWithNames();
 ?>
 
@@ -16,19 +26,14 @@ $sales = $sale->readAllWithNames();
 <head>
     <title>Kelola Penjualan</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script>
-        function printReceipt(id) {
-            var printWindow = window.open('print_receipt.php?id=' + id, '_blank');
-            printWindow.print();
-        }
-    </script>
 </head>
 <body>
     <?php include 'templates/header.php'; ?>
     <div class="container">
         <h2>Kelola Penjualan</h2>
+        <a href="add_sale.php" class="button" style="display: inline-block; padding: 10px 20px; font-size: 16px; font-weight: bold; text-align: center; text-decoration: none; background-color: green; color: white; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 10px;">Tambah Penjualan</a>
 
-        <h3>Daftar Penjualan</h3>
+        <?php if (isset($message)) { echo "<p>$message</p>"; } ?>
         <table border="1">
             <tr>
                 <th>ID</th>
@@ -47,7 +52,8 @@ $sales = $sale->readAllWithNames();
                 <td><?php echo $row['tanggal_penjualan']; ?></td>
                 <td>
                     <a href="edit_sale.php?id=<?php echo $row['id']; ?>">Edit</a>
-                    <button onclick="printReceipt(<?php echo $row['id']; ?>)">Cetak Struk</button>
+                    <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus penjualan ini?');">Hapus</a>
+                    <a href="print_receipt.php?id=<?php echo $row['id']; ?>" target="_blank">Cetak Struk</a>
                 </td>
             </tr>
             <?php } ?>
