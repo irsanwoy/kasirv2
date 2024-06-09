@@ -1,155 +1,54 @@
-/* General styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
 }
-
-.container {
-    max-width: 800px;
-    margin: 20px auto;
+.login-container {
+    background-color: #fff;
     padding: 20px;
-    background: #fff;
-    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Header and Footer */
-header {
-    background: #007bff;
-    color: white;
-    padding: 10px 0;
+    border-radius: 8px;
     text-align: center;
-    font-size: 24px;
+    width: 300px;
 }
-
-footer {
-    background: #007bff;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+.login-container h2 {
+    margin-bottom: 20px;
 }
-
-/* Buttons */
-.button, .print-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
-
-.button:hover, .print-button:hover {
+.login-container button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+.login-container button:hover {
     background-color: #0056b3;
 }
-
-/* Forms */
-form input[type="text"], form input[type="number"], form textarea, form select {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin: 5px 0 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.login-container p {
+    margin-top: 20px;
 }
-
-form button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-form button[type="submit"]:hover {
-    background: #218838;
-}
-
-/* Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Pagination */
-.pagination a {
-    color: #007bff;
-    padding: 8px 16px;
+.login-container p a {
+    color: #007BFF;
     text-decoration: none;
-    margin: 0 4px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
 }
-
-.pagination a:hover {
-    background-color: #ddd;
+.login-container p a:hover {
+    text-decoration: underline;
 }
-
-/* Specific styles for receipt */
-.receipt {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    background: #fff;
-    text-align: center;
-}
-
-.receipt h2 {
-    text-align: center;
+.error-message {
+    color: red;
     margin-bottom: 20px;
-}
-
-.receipt table {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.receipt table, .receipt th, .receipt td {
-    border: 1px solid #ddd;
-    border-collapse: collapse;
-}
-
-.receipt th, .receipt td {
-    padding: 8px;
-    text-align: left;
-}
-
-.receipt th {
-    background: #f2f2f2;
 }

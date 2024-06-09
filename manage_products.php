@@ -34,20 +34,127 @@ $total_pages = ceil($total_rows / $limit);
 <html>
 <head>
     <title>Kelola Barang</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f2f2f2;
+        }
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            color: #007BFF;
+            text-decoration: none;
+            margin: 0 5px;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .pagination a:hover {
+            background-color: #ddd;
+        }
+        .message {
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <?php include 'templates/header.php'; ?>
+    <div class="navbar">
+    <a href="dashboard.php">Dashboard</a>
+        <a href="manage_products.php">Kelola Barang</a>
+        <a href="manage_customers.php">Kelola Pelanggan</a>
+        <a href="manage_sales.php">Kelola Penjualan</a>
+        <a href="riwayat_pelanggan.php">Riwayat pelanggan</a>
+        <a href="logout.php">Logout</a>
+        <a href="logout.php">Logout</a>
+    </div>
     <div class="container">
         <h2>Kelola Barang</h2>
-        <a href="add_product.php" class="button" style="display: inline-block; padding: 10px 20px; font-size: 16px; font-weight: bold; text-align: center; text-decoration: none; background-color: green; color: white; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 10px; ">Tambah Barang</a>
+        <a href="add_product.php" class="button">Tambah Barang</a>
 
-        <?php if (isset($message)) { echo "<p>$message</p>"; } ?>
+        <?php if (isset($message)) { echo "<p class='message'>$message</p>"; } ?>
         <form method="GET">
             <input type="text" name="search" placeholder="Cari Barang" value="<?php echo htmlspecialchars($search_term); ?>">
             <button type="submit">Cari</button>
         </form>
-        <table border="1">
+        <table>
             <tr>
                 <th>ID</th>
                 <th>Nama Barang</th>
