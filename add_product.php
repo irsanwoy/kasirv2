@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>Tambah Barang</title>
+    <link rel="stylesheet" href="css/styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -96,14 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="dashboard.php">Dashboard</a>
-        <a href="manage_products.php">Kelola Barang</a>
-        <a href="manage_customers.php">Kelola Pelanggan</a>
-        <a href="manage_sales.php">Kelola Penjualan</a>
-        <a href="riwayat_pelanggan.php">Riwayat pelanggan</a>
-        <a href="logout.php">Logout</a>
-    </div>
+    <?php  include 'templates/header.php' ?>
     <div class="container">
         <h2>Tambah Barang</h2>
         <?php if (isset($message)) { echo "<p class='message'>$message</p>"; } ?>
@@ -115,6 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Tambah Barang</button>
         </form>
     </div>
-    <?php include 'templates/footer.php'; ?>
+    <?php  include 'templates/footer.php' ?>
 </body>
 </html>

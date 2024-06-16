@@ -33,29 +33,14 @@ $total_pages = ceil($total_rows / $limit);
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="css/styles.css">
     <title>Kelola Barang</title>
-    <style>
+    <!-- <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-        }
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
         }
         .container {
             width: 80%;
@@ -133,18 +118,11 @@ $total_pages = ceil($total_rows / $limit);
             text-align: center;
             margin-bottom: 20px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
-    <div class="navbar">
-    <a href="dashboard.php">Dashboard</a>
-        <a href="manage_products.php">Kelola Barang</a>
-        <a href="manage_customers.php">Kelola Pelanggan</a>
-        <a href="manage_sales.php">Kelola Penjualan</a>
-        <a href="riwayat_pelanggan.php">Riwayat pelanggan</a>
-        <a href="logout.php">Logout</a>
-        <a href="logout.php">Logout</a>
-    </div>
+    <?php include 'templates/header.php'; ?>
+
     <div class="container">
         <h2>Kelola Barang</h2>
         <a href="add_product.php" class="button">Tambah Barang</a>
@@ -183,6 +161,7 @@ $total_pages = ceil($total_rows / $limit);
             <?php } ?>
         </div>
     </div>
+
     <?php include 'templates/footer.php'; ?>
 </body>
 </html>

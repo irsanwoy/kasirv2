@@ -19,7 +19,7 @@ $customers = $customer->readAll();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sale->id_pengguna = $_SESSION['user_id'];
     $sale->id_pelanggan = $_POST['id_pelanggan'];
-    $sale->total = 0; // Ini akan diupdate nanti setelah menghitung total dari detail penjualan
+    $sale->total = 0; 
     if ($sale->create()) {
         foreach ($_POST['products'] as $item) {
             $sale->addDetail($item['id'], $item['jumlah']);

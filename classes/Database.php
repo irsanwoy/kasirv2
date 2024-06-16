@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = 'localhost';
-    private $db_name = 'kasir2.1'; // Pastikan nama database sesuai
-    private $username = 'root'; // Sesuaikan dengan username MySQL Anda
-    private $password = ''; // Sesuaikan dengan password MySQL Anda
+    private $db_name = 'kasir2.1'; 
+    private $username = 'root'; 
+    private $password = ''; 
     public $conn;
 
     public function getConnection() {
